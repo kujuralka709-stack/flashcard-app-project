@@ -1,0 +1,171 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  color: #37306b;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 14px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e8e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+#progressFill {
+  width: 10%;
+  height: 100%;
+  background: #7057d9;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.card-container {
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #7057d9, #a18cd1);
+  color: white;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+  color: #103b32;
+  transform: rotateY(180deg);
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.card-face h2 {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.card-face p {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.hint {
+  color: #777;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: #7057d9;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #5140a8;
+}
+
+button:disabled {
+  background: #c9c6d8;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 20px 14px;
+  }
+
+  .card-container {
+    height: 260px;
+  }
+
+  .card-face h2 {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 10px 12px;
+  }
+}
